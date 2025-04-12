@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Jefferson Calderon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/1842daa51b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+</head>
+
+<body class="bg-black text-white font-inter ">
+
+    <!-- Navbar -->
+    <nav class="fixed top-3 left-0 w-full z-50 transition-all duration-500 ease-in-out">
+        <div class="max-w-6xl mx-auto flex items-center justify-between 
+    bg-gray-400/20 backdrop-blur-md border border-gray-600 
+    rounded-2xl shadow-lg px-6 py-3">
+
+            <!-- Logo -->
+            <a href="#" class="text-white font-semibold text-xl">Perú/Ica</a>
+
+            <!-- Botón hamburguesa -->
+            <button id="menu-toggle" class="md:hidden flex flex-col gap-1 items-center justify-center w-10 h-10"
+                aria-label="Abrir menú">
+                <span class="block w-6 h-0.5 bg-white transition-transform duration-300 transform origin-center"
+                    id="bar1"></span>
+                <span class="block w-6 h-0.5 bg-white transition-transform duration-300 transform origin-center"
+                    id="bar2"></span>
+            </button>
+
+            <!-- Menú escritorio -->
+            <ul id="nav-links"
+                class="hidden md:flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base text-white">
+                <li><a href="#" class="nav-link">Inicio</a></li>
+                <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Menú móvil -->
+        <ul id="mobile-menu" class="md:hidden hidden flex-col mt-4 px-6 py-5 text-white text-base 
+        bg-gray-800/70 backdrop-blur-lg border border-gray-500 rounded-xl mx-4
+        shadow-2xl space-y-4 animate-fade-in-left transition-all duration-300">
+
+            <li><a href="#inicio"
+                    class="nav-link hover:tracking-wider hover:text-purple-300 transition-all duration-300 border-b border-gray-600 pb-2">Inicio</a>
+            </li>
+            <li><a href="#projects"
+                    class="nav-link hover:tracking-wider hover:text-purple-300 transition-all duration-300 border-b border-gray-600 pb-2">Proyectos</a>
+            </li>
+            <li><a href="#skills"
+                    class="nav-link hover:tracking-wider hover:text-purple-300 transition-all duration-300 border-b border-gray-600 pb-2">Habilidades</a>
+            </li>
+            <li><a href="#contact"
+                    class="nav-link hover:tracking-wider hover:text-purple-300 transition-all duration-300">Contacto</a>
+            </li>
+        </ul>
+
+    </nav>
+
+
+    <!-- Header -->
+    <header id="inicio" class="mt-40 md:mt-80 px-6 md:px-20">
+        <div
+            class="flex flex-col md:flex-row items-center justify-between gap-10 max-w-6xl mx-auto text-center md:text-left">
+
+
+            <!-- Columna izquierda: Iconos + Texto + Botón -->
+            <div class="flex-1">
+                <!-- Iconos sociales -->
+                <div class="flex gap-4 mb-4 text-gray-400 text-xl">
+                    <a href="https://github.com/JefersonProjects" target="_blank" aria-label="GitHub"
+                        class="hover:text-white transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jefferson-calder%C3%B3n-echevarr%C3%ADa-5b0a2a280/"
+                        target="_blank" aria-label="LinkedIn" class="hover:text-white transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <div class="relative group">
+                        <a href="mailto:tuemail@example.com" aria-label="Correo" class="hover:text-white transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <span
+                            class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gray-700 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+                            jeffersonalejandro943@gmail.com
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Título y descripción -->
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-left">
+                    Hola, soy <span class="text-purple-400">Jefferson Calderón</span>
+                </h1>
+                <p class="text-lg text-gray-400 text-left mb-6">
+                    Soy desarrollador full stack con experiencia en aplicaciones web y de escritorio,
+                    así como en la gestión de bases de datos. Actualmente curso la carrera de Ingeniería
+                    de Sistemas e Informática en la Universidad Tecnológica del Perú.
+                </p>
+
+                <!-- Botón para descargar CV -->
+                <a href="assets/cv/CV.JeffersonCalderon.pdf" target="_blank"
+                    class="inline-block bg-white text-black px-6 py-2 rounded-lg shadow hover:bg-transparent hover:text-white hover:border hover:border-white transition duration-300">
+                    Descargar CV
+                </a>
+            </div>
+
+            <!-- Columna derecha: Imagen -->
+            <div class="flex-1 flex justify-center">
+                <img src="assets/cv/1442809583.png" alt="Foto"
+                    class="w-80 h-80 object-cover rounded-2xl shadow-lg transition-transform duration-200 ease-out transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl">
+            </div>
+        </div>
+    </header>
+
+    <section id="projects" class="mt-80 px-6 md:px-20">
+
+        <div class="max-w-6xl mx-auto space-y-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-left"  data-aos="fade-up">Proyectos</h2>
+
+            <!-- Proyecto 1 -->
+            <div data-aos="zoom-in"
+                class="bg-black border border-gray-600 rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6 transition duration-300 ease-in-out transform hover:-translate-y-2 hover:border-gray-400">
+
+                <img src="assets/imgprojects/Intranet.png" alt="Proyecto 1"
+                    class="rounded-lg md:w-1/2 object-contain max-h-72" />
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-white">Intranet Educativa – Colegio Peruano
+                        Japonés
+                    </h3>
+                    <p class="text-gray-300 mt-2">
+                        Desarrollé una plataforma que centraliza la gestión académica, mejorando la comunicación
+                        y
+                        eficiencia entre docentes y estudiantes. La plataforma incluye tres roles:
+                        Estudiante, Profesor y Administrador, cada uno con sus propias funcionalidades
+                        específicas para optimizar la experiencia y gestión académica.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">CSS</span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">JavaScript</span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">Java</span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">React</span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">SpringBoot</span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">SQL
+                            Server</span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">AWS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div data-aos="zoom-in"
+                class="bg-black border border-gray-600 rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6 transition duration-300 ease-in-out transform hover:-translate-y-2 hover:border-gray-400">
+
+                <img src="assets/imgprojects/LucianaEcomerce.png" alt="Proyecto 2"
+                    class="rounded-lg md:w-1/2 object-contain max-h-72" />
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-white">E-commerce para Supermercado Luciana</h3>
+                    <p class="text-gray-300 mt-2">
+                        Diseñé una tienda en línea para el Supermercado Luciana,
+                        optimizando la gestión de ventas, productos y usuarios mediante la implementación
+                        de control de roles (cliente/admin), con módulos de inventario y generación de reportes
+                        mensuales. La automatización del sistema redujo los errores de inventario en un 30%, y
+                        la seguridad fue implementada mediante autenticación JWT y gestión de sesiones.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">React
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">SpringBoot
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">JavaScript
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">Java
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">CSS
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">MySQL
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Proyecto 3 -->
+            <div data-aos="zoom-in"
+                class="bg-black border border-gray-600 rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6 transition duration-300 ease-in-out transform hover:-translate-y-2 hover:border-gray-400">
+
+                <img src="assets/imgprojects/ZirconBiker.png" alt="Proyecto 2"
+                    class="rounded-lg md:w-1/2 object-contain max-h-72" />
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-white">Apliacion Web para la empresa ZirconBiker
+                    </h3>
+                    <p class="text-gray-300 mt-2">
+                        Desarrollé un sitio web intuitivo para ZirconBiker, permitiendo a los usuarios explorar
+                        y comprar motos y accesorios de manera eficiente. Implementé un sistema de filtrado y
+                        proporcioné información detallada sobre cada producto, mejorando la presencia en línea y la
+                        imagen de la empresa.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">PHP
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">CSS
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">JavaScript
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">MySQL
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">HTML
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Proyecto 4 -->
+            <div data-aos="zoom-in"
+                class="bg-black border border-gray-600 rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6 transition duration-300 ease-in-out transform hover:-translate-y-2 hover:border-gray-400">
+
+                <img src="assets/imgprojects/Icatom.png" alt="Proyecto 2"
+                    class="rounded-lg md:w-1/2 object-contain max-h-72" />
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-white">Sistema desktop de Boletas de Pago - ICATOM
+                        S.A. </h3>
+                    <p class="text-gray-300 mt-2">
+                        Realicé el análisis, diseño e implementación de un sistema de información desktop para la
+                        automatización
+                        de la entrega y almacenamiento de las boletas de pago de la empresa ICATOM S.A., en Ica, en el
+                        año 2023.
+                        El sistema cuenta con una interfaz gráfica intuitiva que facilita su uso por parte del personal
+                        administrativo
+                        y permite la futura migración a una plataforma web. Este proyecto fue realizado en coordinación
+                        con los
+                        requerimientos reales de la empresa ICATOM S.A.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">Java
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">SQL
+                            Server
+                        </span>
+                        <span
+                            class="bg-gray-800 px-3 py-1 rounded-lg text-sm text-white border border-gray-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105 hover:border-gray-400">Swing(java)
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="skills" class="px-6 md:px-20 mt-40 text-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-left" data-aos="fade-up">Skills & Tecnologias</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-10">
+
+
+                <!-- Languages & Frameworks -->
+                <div data-aos="zoom-in"
+                    class="bg-zinc-900 rounded-xl p-6 border border-gray-600 transition-transform duration-200 ease-out transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl hover:border-gray-400">
+                    <h3 class="text-lg font-semibold mb-4">Lenguajes & Frameworks</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white flex items-center gap-2 border border-gray-600 shake-hover"><i
+                                class="devicon-java-plain"></i> Java</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover"><i
+                                class="devicon-css3-plain"></i> CSS</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white flex items-center gap-2 border border-gray-600 shake-hover"><i
+                                class="devicon-javascript-plain"></i>JavaScript</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover"><i
+                                class="devicon-php-plain"></i> PHP(Básico)</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover">
+                            <i class="devicon-spring-original"></i> SpringBoot</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover">
+                            <i class="devicon-angular-plain"></i> Angular(Básico)</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover">
+                            <i class="devicon-react-original"></i> React</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover">
+                            <i class="devicon-amazonwebservices-plain-wordmark"></i> AWS</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover">SQL
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div data-aos="zoom-in"
+                    class="bg-zinc-900 rounded-xl p-6 border border-gray-600 transition-transform duration-200 ease-out transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl hover:border-gray-400">
+                    <h3 class="text-lg font-semibold mb-4">Databases</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover">
+                            <i class="devicon-microsoftsqlserver-plain"></i>SQL Server</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover"><i
+                                class="devicon-mysql-plain"></i> MySQL</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover"><i
+                                class="devicon-postgresql-plain"></i> PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div data-aos="zoom-in"
+                    class="bg-zinc-900 rounded-xl p-6 border border-gray-600 transition-transform duration-200 ease-out transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl hover:border-gray-400">
+                    <h3 class="text-lg font-semibold mb-4">Herramientas</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 flex items-center gap-2 shake-hover">
+                            <i class="devicon-vscode-plain"></i>VS Code</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover">
+                            <i class="devicon-postman-plain"></i>Postman</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover"><i
+                                class="devicon-github-original"></i> GitHub</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover"><i
+                                class="devicon-intellij-plain"></i> Intellij</span>
+                    </div>
+                </div>
+
+                <!-- Spoken Languages -->
+                <div data-aos="zoom-in"
+                    class="bg-zinc-900 rounded-xl p-6 border border-gray-600 transition-transform duration-200 ease-out transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl hover:border-gray-400">
+                    <h3 class="text-lg font-semibold mb-4">Idiomas</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover">Español
+                            • Nativo</span>
+                        <span
+                            class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white border border-gray-600 shake-hover">Inglés
+                            • Básico</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="px-6 md:px-20 mt-40 text-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6">Contacto</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-8">
+                ¿Tienes alguna pregunta, colaboración o propuesta? Estoy abierto a nuevas oportunidades. ¡No dudes en
+                escribirme!
+            </p>
+            <div class="flex justify-center gap-6 text-2xl text-gray-400">
+                <a href="mailto:jeffersonalejandro943@gmail.com" class="hover:text-white transition">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/JefersonProjects" target="_blank" class="hover:text-white transition">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jefferson-calderón-echevarría-5b0a2a280" target="_blank"
+                    class="hover:text-white transition">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="mt-20 px-6 md:px-20 text-center text-gray-500 text-sm">
+        <div class="max-w-6xl mx-auto border-t border-gray-700 pt-6">
+            <p>© 2025 Jefferson Calderón. Todos los derechos reservados.</p>
+        </div>
+        <div class="h-5"></div>
+    </footer>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
+</html>
+
+</body>
+
+</html>

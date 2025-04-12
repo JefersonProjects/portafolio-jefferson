@@ -1,0 +1,74 @@
+
+* {
+    cursor: url('assets/cursors/cursor.png'), auto !important;
+}
+a,
+button {
+    cursor: url('assets/cursors/puntero-de-mano.png'), pointer !important;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+
+.nav-link {
+    padding: 0.2rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #8b5cf6;
+    /* Tailwind's violet-500 */
+    color: white;
+    box-shadow: 0 0 10px #c084fc, 0 0 20px #c084fc;
+}
+
+@keyframes fade-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.animate-fade-in-left {
+    animation: fade-in-left 0.6s ease-out forwards;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(2px, -2px);
+    }
+
+    60% {
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.shake-hover:hover {
+    animation: shake 0.3s ease-in-out;
+}
