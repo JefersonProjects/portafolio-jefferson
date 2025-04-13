@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/1842daa51b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    
+
 
     <script>
         tailwind.config = {
@@ -61,7 +61,7 @@
         bg-gray-800/70 backdrop-blur-lg border border-gray-500 rounded-xl mx-4
         shadow-2xl space-y-4 animate-fade-in-left transition-all duration-300">
 
-            <li><a href="#inicio"
+            <li><a href="#"
                     class="nav-link hover:tracking-wider hover:text-purple-300 transition-all duration-300 border-b border-gray-600 pb-2">Inicio</a>
             </li>
             <li><a href="#projects"
@@ -79,7 +79,7 @@
 
 
     <!-- Header -->
-    <header id="inicio" class="mt-40 md:mt-80 px-6 md:px-20">
+    <header class="mt-40 md:mt-80 px-6 md:px-20">
         <div
             class="flex flex-col md:flex-row items-center justify-between gap-10 max-w-6xl mx-auto text-center md:text-left">
 
@@ -111,10 +111,8 @@
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 text-left">
                     Hola, soy <span class="text-purple-400">Jefferson Calderón</span>
                 </h1>
-                <p class="text-lg text-gray-400 text-left mb-6">
-                    Soy desarrollador full stack con experiencia en aplicaciones web y de escritorio,
-                    así como en la gestión de bases de datos. Actualmente curso la carrera de Ingeniería
-                    de Sistemas e Informática en la Universidad Tecnológica del Perú.
+                <p id="typewriter" class="text-lg text-gray-400 text-left mb-6">
+
                 </p>
 
                 <!-- Botón para descargar CV -->
@@ -135,11 +133,17 @@
     <section id="projects" class="mt-80 px-6 md:px-20">
 
         <div class="max-w-6xl mx-auto space-y-10">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-left"  >Proyectos</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-left">Proyectos</h2>
 
             <!-- Proyecto 1 -->
-            <div 
-                class="bg-black border border-gray-600 rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6 transition duration-300 ease-in-out transform hover:-translate-y-2 hover:border-gray-400">
+            <div
+                class="group relative bg-black border border-gray-600 rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6 transition duration-300 ease-in-out transform hover:-translate-y-2 hover:border-gray-400">
+
+
+                <a href="https://link-a-tu-proyecto.com" target="_blank" class="absolute top-4 right-4 text-gray-400 hover:text-purple-400 
+                transition transform group-hover:scale-110 cursor-pointer">
+                    <i class="fa-sharp fa-solid fa-arrow-up-right-from-square text-2xl icon-hover-animate"></i>
+                </a>
 
                 <img src="assets/imgprojects/Intranet.png" alt="Proyecto 1"
                     class="rounded-lg md:w-1/2 object-contain max-h-72" />
@@ -175,9 +179,14 @@
             </div>
 
             <!-- Proyecto 2 -->
-            <div 
+            <div
                 class="bg-black border border-gray-600 rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6 transition duration-300 ease-in-out transform hover:-translate-y-2 hover:border-gray-400">
 
+
+                <a href="https://link-a-tu-proyecto.com" target="_blank" class="absolute top-4 right-4 text-gray-400 hover:text-purple-400 
+          transition transform group-hover:scale-110 cursor-pointer">
+                    <i class="fa-sharp fa-solid fa-arrow-up-right-from-square text-2xl icon-hover-animate"></i>
+                </a>
                 <img src="assets/imgprojects/LucianaEcomerce.png" alt="Proyecto 2"
                     class="rounded-lg md:w-1/2 object-contain max-h-72" />
                 <div>
@@ -216,10 +225,14 @@
 
 
             <!-- Proyecto 3 -->
-            <div 
+            <div
                 class="bg-black border border-gray-600 rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6 transition duration-300 ease-in-out transform hover:-translate-y-2 hover:border-gray-400">
 
-                <img src="assets/imgprojects/ZirconBiker.png" alt="Proyecto 2"
+                <a href="https://link-a-tu-proyecto.com" target="_blank" class="absolute top-4 right-4 text-gray-400 hover:text-purple-400 
+          transition transform group-hover:scale-110 cursor-pointer">
+                    <i class="fa-sharp fa-solid fa-arrow-up-right-from-square text-2xl icon-hover-animate"></i>
+                </a>
+                <img src="assets/imgprojects/ZirconBiker.png" alt="Proyecto 3"
                     class="rounded-lg md:w-1/2 object-contain max-h-72" />
                 <div>
                     <h3 class="text-xl md:text-2xl font-semibold text-white">Apliacion Web para la empresa ZirconBiker
@@ -253,10 +266,14 @@
 
 
             <!-- Proyecto 4 -->
-            <div 
+            <div
                 class="bg-black border border-gray-600 rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6 transition duration-300 ease-in-out transform hover:-translate-y-2 hover:border-gray-400">
 
-                <img src="assets/imgprojects/Icatom.png" alt="Proyecto 2"
+                <a href="https://link-a-tu-proyecto.com" target="_blank" class="absolute top-4 right-4 text-gray-400 hover:text-purple-400 
+          transition transform group-hover:scale-110 cursor-pointer">
+                    <i class="fa-sharp fa-solid fa-arrow-up-right-from-square text-2xl icon-hover-animate"></i>
+                </a>
+                <img src="assets/imgprojects/Icatom.png" alt="Proyecto 4"
                     class="rounded-lg md:w-1/2 object-contain max-h-72" />
                 <div>
                     <h3 class="text-xl md:text-2xl font-semibold text-white">Sistema desktop de Boletas de Pago - ICATOM
@@ -294,13 +311,13 @@
 
     <section id="skills" class="px-6 md:px-20 mt-40 text-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-left" >Skills & Tecnologias</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-left">Skills & Tecnologias</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-10">
 
 
                 <!-- Languages & Frameworks -->
-                <div 
+                <div
                     class="bg-zinc-900 rounded-xl p-6 border border-gray-600 transition-transform duration-200 ease-out transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl hover:border-gray-400">
                     <h3 class="text-lg font-semibold mb-4">Lenguajes & Frameworks</h3>
                     <div class="flex flex-wrap gap-3">
@@ -335,7 +352,7 @@
                 </div>
 
                 <!-- Databases -->
-                <div 
+                <div
                     class="bg-zinc-900 rounded-xl p-6 border border-gray-600 transition-transform duration-200 ease-out transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl hover:border-gray-400">
                     <h3 class="text-lg font-semibold mb-4">Databases</h3>
                     <div class="flex flex-wrap gap-3">
@@ -352,7 +369,7 @@
                 </div>
 
                 <!-- Tools -->
-                <div 
+                <div
                     class="bg-zinc-900 rounded-xl p-6 border border-gray-600 transition-transform duration-200 ease-out transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl hover:border-gray-400">
                     <h3 class="text-lg font-semibold mb-4">Herramientas</h3>
                     <div class="flex flex-wrap gap-3">
@@ -372,7 +389,7 @@
                 </div>
 
                 <!-- Spoken Languages -->
-                <div 
+                <div
                     class="bg-zinc-900 rounded-xl p-6 border border-gray-600 transition-transform duration-200 ease-out transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl hover:border-gray-400">
                     <h3 class="text-lg font-semibold mb-4">Idiomas</h3>
                     <div class="flex flex-wrap gap-3">

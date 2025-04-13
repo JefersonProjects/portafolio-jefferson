@@ -48,3 +48,24 @@ navLinks.forEach(link => {
         bar2.classList.remove('-rotate-45', '-translate-y-[6px]');
     });
 });
+
+const typewriterElement = document.getElementById("typewriter");
+const text = "Soy desarrollador full stack con experiencia en aplicaciones web y de escritorio,así como en la gestión de bases de datos. Actualmente curso la carrera de Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú."
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        typewriterElement.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 80); 
+    } else {
+        // Quita el cursor al terminar
+        typewriterElement.classList.remove("typewriter");
+    }
+}
+
+window.addEventListener("load", () => {
+    typewriterElement.textContent = "";
+    typewriterElement.classList.add("typewriter");
+    typeEffect();
+});

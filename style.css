@@ -13,6 +13,22 @@ body {
     overflow-y: scroll;
 }
 
+.typewriter::after {
+    content: "|";
+    animation: blink 1s infinite;
+    color: #a855f7; 
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+a i, button i {
+    cursor: url('assets/cursors/puntero-de-mano.png'), pointer !important;
+  }
+  
 
 .nav-link {
     padding: 0.2rem 1rem;
@@ -71,4 +87,16 @@ body {
 
 .shake-hover:hover {
     animation: shake 0.3s ease-in-out;
+}
+
+.icon-hover-animate:hover {
+    animation: wiggle 0.4s ease-in-out;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(12deg); }
+    50% { transform: rotate(-8deg); }
+    75% { transform: rotate(6deg); }
+    100% { transform: rotate(0deg); }
 }
