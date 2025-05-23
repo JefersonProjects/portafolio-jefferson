@@ -50,7 +50,6 @@ function createProjectCard(project) {
     </div>
   `;
 }
-
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("project-container");
     container.innerHTML = projects.map(createProjectCard).join("");

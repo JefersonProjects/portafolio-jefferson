@@ -12,7 +12,6 @@ const elements = {
 
 let lastScroll = 0;
 let menuOpen = false;
-
 // Ocultar navbar al hacer scroll hacia abajo
 window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
@@ -98,4 +97,12 @@ skillsData.forEach((skillGroup) => {
     `;
 
     elements.skillsContainer.appendChild(box);
+});
+
+const cursorLight = document.getElementById("cursor-light");
+document.addEventListener("mousemove", (e) => {
+    // Centramos el círculo según el tamaño
+    const offset = 500; // mitad del ancho/alto
+    cursorLight.style.left = `${e.clientX - offset}px`;
+    cursorLight.style.top = `${e.clientY - offset}px`;
 });

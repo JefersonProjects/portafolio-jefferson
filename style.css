@@ -1,7 +1,7 @@
-
 * {
     cursor: url('assets/cursors/cursor.png'), auto !important;
 }
+
 a,
 button {
     cursor: url('assets/cursors/puntero-de-mano.png'), pointer !important;
@@ -13,22 +13,40 @@ body {
     overflow-y: scroll;
 }
 
+#cursor-light {
+    position: fixed;
+    width: 1000px;
+    height: 1000px;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(7, 7, 219, 0.244) 0%, transparent 85%);
+    border-radius: 50%;
+    z-index: 0;
+    mix-blend-mode: screen; 
+    transition: top 0.05s linear, left 0.05s linear;
+}
+
 .typewriter::after {
     content: "|";
     animation: blink 1s infinite;
-    color: #a855f7; 
+    color: #a855f7;
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
-
-a i, button i {
+a i,
+button i {
     cursor: url('assets/cursors/puntero-de-mano.png'), pointer !important;
-  }
-  
+}
 
 .nav-link {
     padding: 0.2rem 1rem;
@@ -94,9 +112,23 @@ a i, button i {
 }
 
 @keyframes wiggle {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(12deg); }
-    50% { transform: rotate(-8deg); }
-    75% { transform: rotate(6deg); }
-    100% { transform: rotate(0deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(12deg);
+    }
+
+    50% {
+        transform: rotate(-8deg);
+    }
+
+    75% {
+        transform: rotate(6deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
