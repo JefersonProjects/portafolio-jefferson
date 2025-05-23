@@ -1,71 +1,101 @@
-let lastScroll = 0;
-const nav = document.querySelector("nav");
-const toggleBtn = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelectorAll('#mobile-menu .nav-link');
-const bar1 = document.getElementById('bar1');
-const bar2 = document.getElementById('bar2');
+// Referencia única a todos los elementos necesarios
+const elements = {
+    nav: document.querySelector("nav"),
+    toggleBtn: document.getElementById("menu-toggle"),
+    mobileMenu: document.getElementById("mobile-menu"),
+    navLinks: document.querySelectorAll("#mobile-menu .nav-link"),
+    bar1: document.getElementById("bar1"),
+    bar2: document.getElementById("bar2"),
+    typewriter: document.getElementById("typewriter"),
+    skillsContainer: document.getElementById("skills-container"),
+};
 
+let lastScroll = 0;
+let menuOpen = false;
+
+// Ocultar navbar al hacer scroll hacia abajo
 window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
 
     if (currentScroll > lastScroll) {
-        nav.classList.add("opacity-0", "-translate-y-full");
+        elements.nav.classList.add("opacity-0", "-translate-y-full");
 
-        // cerrar menu movil si esta abierto
+        // Cerrar menú móvil si está abierto
         if (menuOpen) {
-            mobileMenu.classList.add('hidden');
-            menuOpen = false;
-            bar1.classList.remove('rotate-45', 'translate-y-[6px]');
-            bar2.classList.remove('-rotate-45', '-translate-y-[6px]');
+            closeMobileMenu();
         }
     } else {
-        nav.classList.remove("opacity-0", "-translate-y-full");
+        elements.nav.classList.remove("opacity-0", "-translate-y-full");
     }
 
-    lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    lastScroll = Math.max(currentScroll, 0);
 });
 
-let menuOpen = false;
-toggleBtn.addEventListener('click', () => {
+// Alternar el menú móvil (hamburguesa)
+elements.toggleBtn.addEventListener("click", () => {
     menuOpen = !menuOpen;
-    mobileMenu.classList.toggle('hidden');
+    elements.mobileMenu.classList.toggle("hidden");
 
-    if (menuOpen) {
-        bar1.classList.add('rotate-45', 'translate-y-[6px]');
-        bar2.classList.add('-rotate-45', '-translate-y-[6px]');
-    } else {
-        bar1.classList.remove('rotate-45', 'translate-y-[6px]');
-        bar2.classList.remove('-rotate-45', '-translate-y-[6px]');
-    }
+    // Animar líneas del botón hamburguesa
+    elements.bar1.classList.toggle("rotate-45");
+    elements.bar1.classList.toggle("translate-y-[6px]");
+    elements.bar2.classList.toggle("-rotate-45");
+    elements.bar2.classList.toggle("-translate-y-[6px]");
 });
 
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuOpen = false;
-        bar1.classList.remove('rotate-45', 'translate-y-[6px]');
-        bar2.classList.remove('-rotate-45', '-translate-y-[6px]');
-    });
-});
+// Cerrar menú al hacer clic en cualquier enlace del menú móvil
+elements.navLinks.forEach((link) =>
+    link.addEventListener("click", closeMobileMenu)
+);
 
-const typewriterElement = document.getElementById("typewriter");
-const text = "Soy desarrollador full stack con experiencia en aplicaciones web y de escritorio,así como en la gestión de bases de datos. Actualmente curso la carrera de Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú."
+// Función reutilizable para cerrar el menú móvil
+function closeMobileMenu() {
+    menuOpen = false;
+    elements.mobileMenu.classList.add("hidden");
+    elements.bar1.classList.remove("rotate-45", "translate-y-[6px]");
+    elements.bar2.classList.remove("-rotate-45", "-translate-y-[6px]");
+}
+
+// Animación de máquina de escribir en la descripción
+const fullText = "Soy desarrollador full stack con experiencia en aplicaciones web y de escritorio, así como en la gestión de bases de datos. Actualmente curso la carrera de Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú.";
 let i = 0;
+const TYPING_SPEED = 80;
 
 function typeEffect() {
-    if (i < text.length) {
-        typewriterElement.textContent += text.charAt(i);
+    if (i < fullText.length) {
+        elements.typewriter.textContent += fullText.charAt(i);
         i++;
-        setTimeout(typeEffect, 80); 
+        setTimeout(typeEffect, TYPING_SPEED);
     } else {
-        // Quita el cursor al terminar
-        typewriterElement.classList.remove("typewriter");
+        elements.typewriter.classList.remove("typewriter"); // Quita el cursor
     }
 }
 
+// Inicia animación de texto al cargar
 window.addEventListener("load", () => {
-    typewriterElement.textContent = "";
-    typewriterElement.classList.add("typewriter");
+    elements.typewriter.textContent = "";
+    elements.typewriter.classList.add("typewriter");
     typeEffect();
+});
+
+// Render dinámico de las habilidades (skillsData viene de skills.js)
+skillsData.forEach((skillGroup) => {
+    const box = document.createElement("div");
+    box.className = "bg-zinc-900 rounded-xl p-6 border border-gray-600 transition-transform duration-200 ease-out transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl hover:border-gray-400";
+
+    box.innerHTML = `
+        <h3 class="text-lg font-semibold mb-4">${skillGroup.category}</h3>
+        <div class="flex flex-wrap gap-3">
+            ${skillGroup.items
+                .map((item) => `
+                <span class="bg-zinc-800 px-4 py-1 rounded-md text-sm text-white flex items-center gap-2 border border-gray-600 shake-hover">
+                    ${item.icon ? `<i class="${item.icon}"></i>` : ""}
+                    ${item.name}
+                </span>
+            `)
+                .join("")}
+        </div>
+    `;
+
+    elements.skillsContainer.appendChild(box);
 });
