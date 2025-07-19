@@ -18,7 +18,7 @@ const projects = [
         description: "Desarrollé un sitio web intuitivo para ZirconBiker, permitiendo a los usuarios explorar y comprar motos y accesorios. Implementé un sistema de filtrado y proporcioné información detallada sobre cada producto.",
         technologies: ["PHP", "CSS", "JavaScript", "MySQL", "HTML"],
         image: "assets/imgprojects/ZirconBiker.png",
-        link: "https://github.com/JefersonProjects"
+        link: "https://github.com/JefersonProjects/portafolio-jefferson.git"
     },
     {
         title: "Sistema desktop de Boletas de Pago - ICATOM S.A.",
