@@ -1,3 +1,24 @@
+# 🚀 My Personal Portfolio
+
+Hello there! 👋 Welcome to the source code of my personal portfolio.
+
+This is a project focused on simplicity and elegance, created to showcase my work and skills in a clean and direct manner. The goal was to build a fluid and pleasant user experience, demonstrating that you don't always need complex tools to achieve a professional and modern result.
+
+## ✨ Core Technologies
+
+This site was built from the ground up with an emphasis on efficiency and best practices. The technologies used are:
+
+* **HTML5:** For a semantic, solid, and accessible structure that forms the skeleton of the project.
+* **Tailwind CSS:** For the visual design, using a utility-first approach that allows for creating complex, responsive interfaces in a fast and maintainable way.
+* **JavaScript (Vanilla):** To power interactivity and animations, keeping the site lightweight and ensuring optimal performance without relying on external libraries.
+
+This portfolio is a testament to the power of fundamental web technologies when combined with thoughtful design and a focus on code quality.
+
+Hope you enjoy it!
+
+
+## ---------------------------------------------ESPANISH --------------------
+
 # 🚀 Mi Portafolio Personal
 
 ¡Hola! 👋 Bienvenido al código fuente de mi portafolio personal.
