@@ -56,7 +56,10 @@ function closeMobileMenu() {
 }
 
 // Animación de máquina de escribir en la descripción
-const fullText = "Soy desarrollador full stack con experiencia en aplicaciones web y de escritorio, así como en la gestión de bases de datos. Actualmente curso la carrera de Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú.";
+const fullText = `Soy estudiante de la carrera de  Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú .
+ Mi experiencia práctica se centra en el desarrollo de software full-stack y la gestión de bases de datos, la cual se complementa con una 
+ sólida formación académica en administración de infraestructura TI, redes y metodologías ágiles. Busco aplicar este conocimiento combinado
+  para construir y mantener soluciones tecnológicas eficientes y escalables`;
 let i = 0;
 const TYPING_SPEED = 80;
 
