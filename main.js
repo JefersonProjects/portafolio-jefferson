@@ -56,10 +56,9 @@ function closeMobileMenu() {
 }
 
 // Animación de máquina de escribir en la descripción
-const fullText = `Soy estudiante de la carrera de  Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú .
- Mi experiencia práctica se centra en el desarrollo de software full-stack y la gestión de bases de datos, la cual se complementa con una 
- sólida formación académica en administración de infraestructura TI, redes y metodologías ágiles. Busco aplicar este conocimiento combinado
-  para construir y mantener soluciones tecnológicas eficientes y escalables`;
+const fullText = `Soy estudiante de Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú. 
+Mi experiencia se enfoca en el desarrollo Full-Stack y servicios en la nube, complementada con formación en infraestructura 
+TI, redes y metodologías ágiles. Busco construir soluciones tecnológicas eficientes, escalables y de alto impacto.`;
 let i = 0;
 const TYPING_SPEED = 80;
 
