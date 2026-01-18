@@ -41,7 +41,7 @@ const skillsData = [
         category: "Idiomas",
         items: [
             { name: "Español • Nativo", icon: "" },
-            { name: "Inglés • Básico", icon: "" }
+            { name: "Inglés • Intermedio", icon: "" }
         ]
     }
 ];
