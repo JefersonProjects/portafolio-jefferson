@@ -6,12 +6,15 @@ const skillsData = [
             { name: "Java", icon: "devicon-java-plain" },
             { name: "CSS", icon: "devicon-css3-plain" },
             { name: "JavaScript", icon: "devicon-javascript-plain" },
+            { name: "TypeScript", icon: "devicon-typescript-plain" },
             { name: "PHP ", icon: "devicon-php-plain" },
             { name: "SpringBoot", icon: "devicon-spring-original" },
             { name: "Angular ", icon: "devicon-angular-plain" },
             { name: "React", icon: "devicon-react-original" },
+            { name: "Next.js", icon: "devicon-nextjs-original-wordmark" },
             { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark" },
             { name: "NodeJs", icon: "devicon-nodejs-plain" },
+            { name: "NestJS", icon: "devicon-nestjs-original" },
             { name: "SQL", icon: "" }
         ]
     },
