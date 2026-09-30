@@ -1,0 +1,197 @@
+/* ==========================================================================
+   COMPONENTES — estilos propios de piezas reutilizables
+   ========================================================================== */
+
+/* ---------- Navbar ---------- */
+.nav-link {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 0.5rem;
+    color: rgb(var(--c-fg-soft));
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: rgb(var(--c-fg));
+    background-color: rgb(var(--c-fg) / 0.08);
+}
+
+/* ---------- Botón de tema (claro / oscuro) ---------- */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    color: rgb(var(--c-fg-soft));
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    color: rgb(var(--c-fg));
+    background-color: rgb(var(--c-fg) / 0.08);
+}
+
+/* Muestra el ícono del tema al que vas a cambiar. */
+[data-theme="dark"] .theme-toggle .icon-moon,
+[data-theme="light"] .theme-toggle .icon-sun {
+    display: none;
+}
+
+/* ---------- Typewriter ---------- */
+/* La copia invisible y el texto animado ocupan la misma celda: el alto no cambia al escribir. */
+.typewriter-stack {
+    display: grid;
+}
+
+.typewriter__ghost,
+.typewriter__typed {
+    grid-area: 1 / 1;
+}
+
+.typewriter__ghost {
+    visibility: hidden;
+}
+
+.typewriter::after {
+    content: "|";
+    animation: blink 1s infinite;
+    color: rgb(var(--accent-500));
+}
+
+/* ---------- Carousel ---------- */
+.carousel {
+    --carousel-gap: 1rem;
+    --carousel-bleed: 1.5rem; /* en móvil el carrusel llega al borde de la pantalla */
+    --slide-size: 85%; /* móvil: 1 tarjeta + un pedazo de la siguiente */
+}
+
+@media (min-width: 768px) {
+    .carousel {
+        --carousel-gap: 1.5rem;
+        --carousel-bleed: 0rem;
+        --slide-size: calc((100% - var(--carousel-gap)) / 2); /* PC: 2 tarjetas */
+    }
+}
+
+.carousel__track {
+    display: flex;
+    gap: var(--carousel-gap);
+    margin: 0 calc(var(--carousel-bleed) * -1);
+    padding: 0.25rem var(--carousel-bleed) 1rem;
+    scroll-padding-inline: var(--carousel-bleed);
+    list-style: none;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.carousel__track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel__track.is-dragging {
+    scroll-snap-type: none;
+    user-select: none;
+}
+
+.carousel__track.is-dragging * {
+    pointer-events: none;
+}
+
+.carousel__slide {
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+/* Flechas */
+.carousel__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid rgb(var(--c-line-strong) / 0.7);
+    border-radius: 9999px;
+    background-color: rgb(var(--c-fg) / 0.03);
+    color: rgb(var(--c-fg));
+    transition: border-color 0.2s, background-color 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.carousel__arrow:not(:disabled):hover {
+    border-color: rgb(var(--accent-400) / 0.6);
+    background-color: rgb(var(--accent-500) / 0.1);
+    color: rgb(var(--accent-300));
+}
+
+.carousel__arrow:disabled {
+    opacity: 0.3;
+}
+
+/* Puntos */
+.carousel__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.carousel__dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem; /* área de clic cómoda; el punto visible es el ::before */
+    padding: 0 0.25rem;
+}
+
+.carousel__dot::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background-color: rgb(var(--c-line-strong) / 0.7);
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel__dot:hover::before {
+    background-color: rgb(var(--c-fg-muted));
+}
+
+.carousel__dot[aria-current="true"]::before {
+    width: 1.75rem;
+    background-color: rgb(var(--accent-500));
+}
+
+/* Si todas las tarjetas caben, no hacen falta controles. */
+.carousel.is-static [data-carousel-prev],
+.carousel.is-static [data-carousel-next],
+.carousel.is-static [data-carousel-dots] {
+    display: none;
+}
+
+/* ---------- Project card ---------- */
+/* Portada que se muestra cuando un proyecto aún no tiene captura. */
+.project-cover {
+    background-color: #09090b;
+    background-image:
+        radial-gradient(circle at 25% 20%, rgb(var(--accent-500) / 0.35), transparent 55%),
+        radial-gradient(circle at 85% 90%, rgb(var(--accent-400) / 0.18), transparent 50%),
+        linear-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+    background-size: auto, auto, 32px 32px, 32px 32px;
+}
+
+/* ---------- Fondo animado ---------- */
+/* Canvas fijo detrás de todo el contenido (lo dibuja js/features/background). */
+.bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: var(--fx-opacity);
+}

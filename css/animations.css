@@ -1,0 +1,30 @@
+/* ==========================================================================
+   ANIMACIONES — keyframes y clases que las aplican
+   Regla del sitio: pocas animaciones y con propósito
+   (typewriter, luz del cursor y la entrada del menú móvil).
+   ========================================================================== */
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fade-in-down 0.25s ease-out;
+}

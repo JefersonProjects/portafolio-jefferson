@@ -1,0 +1,8 @@
+/*
+ * Entrada de Tailwind. NO edites css/tailwind.css: se genera a partir de este archivo
+ * con `npm run build` (o `npm run dev` mientras trabajas).
+ * Tus estilos propios van en base.css, animations.css y components.css.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

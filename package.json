@@ -1,0 +1,13 @@
+{
+  "name": "portafolio-jefferson",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portafolio personal de Jefferson Calderón",
+  "scripts": {
+    "dev": "tailwindcss -i ./css/tailwind.input.css -o ./css/tailwind.css --watch",
+    "build": "tailwindcss -i ./css/tailwind.input.css -o ./css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.19"
+  }
+}

@@ -1,0 +1,10 @@
+# Vistas previas que genera la app de Claude (no son parte del sitio)
+Claude outputs/
+
+# Archivos del sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Dependencias de npm (se instalan con `npm install`)
+node_modules/

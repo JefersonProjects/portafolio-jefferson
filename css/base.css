@@ -1,0 +1,126 @@
+/* ==========================================================================
+   BASE — variables de diseño (colores por tema) y estilos globales
+   (las rutas son relativas a esta carpeta: ../assets/...)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Variables de diseño
+   Todos los colores del sitio salen de aquí. Tailwind los usa con nombres
+   por su FUNCIÓN, no por su color: bg-page, text-fg, text-fg-muted,
+   bg-card, border-line, text-accent-400... Así el mismo HTML sirve para
+   el modo oscuro y el claro: solo cambian estos valores.
+   Formato "R G B" para que Tailwind pueda aplicar transparencias (bg-card/70).
+   -------------------------------------------------------------------------- */
+
+/* Modo oscuro (por defecto) */
+:root,
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    --c-page: 0 0 0;               /* fondo de la página            */
+    --c-fg: 255 255 255;           /* títulos y texto principal     */
+    --c-fg-soft: 212 212 216;      /* texto de párrafos             */
+    --c-fg-muted: 161 161 170;     /* texto secundario              */
+    --c-fg-subtle: 113 113 122;    /* fechas, pie de página         */
+    --c-card: 24 24 27;            /* fondo de tarjetas             */
+    --c-line: 39 39 42;            /* bordes suaves                 */
+    --c-line-strong: 82 82 91;     /* bordes al pasar el mouse      */
+    --c-chip: 39 39 42;            /* fondo de etiquetas            */
+
+    /* Color de acento: cambia estos valores para cambiar el morado de todo el sitio */
+    --accent-300: 216 180 254;
+    --accent-400: 192 132 252;
+    --accent-500: 168 85 247;
+    --accent-600: 147 51 234;
+
+    /* Fondo animado (js/features/background) */
+    --fx-opacity: 1;
+}
+
+/* Modo claro */
+[data-theme="light"] {
+    color-scheme: light;
+
+    --c-page: 250 250 250;
+    --c-fg: 24 24 27;
+    --c-fg-soft: 63 63 70;
+    --c-fg-muted: 82 82 91;
+    --c-fg-subtle: 113 113 122;
+    --c-card: 255 255 255;
+    --c-line: 228 228 231;
+    --c-line-strong: 161 161 170;
+    --c-chip: 244 244 245;
+
+    /* Sobre fondo claro el morado necesita ser más oscuro para leerse bien */
+    --accent-300: 126 34 206;
+    --accent-400: 147 51 234;
+    --accent-500: 168 85 247;
+    --accent-600: 126 34 206;
+
+    --fx-opacity: 0.9;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    cursor: url("../assets/cursors/cursor.webp"), auto !important;
+}
+
+a,
+button,
+a i,
+button i {
+    cursor: url("../assets/cursors/puntero-de-mano.webp"), pointer !important;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Contorno visible solo al navegar con teclado (accesibilidad). */
+:focus-visible {
+    outline: 2px solid rgb(var(--accent-500));
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+}
+
+/* Luz que sigue al puntero (la posición la controla js/features/cursorLight.js). */
+#cursor-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 1000px;
+    pointer-events: none;
+    background: radial-gradient(circle, rgb(var(--accent-500) / 0.14) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    mix-blend-mode: screen;
+    transition: transform 0.05s linear;
+    will-change: transform;
+}
+
+[data-theme="light"] #cursor-light {
+    background: radial-gradient(circle, rgb(var(--accent-400) / 0.1) 0%, transparent 70%);
+    mix-blend-mode: multiply;
+}
+
+/* Respeta a quienes desactivan las animaciones en su sistema. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
